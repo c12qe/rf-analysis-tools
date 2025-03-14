@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "rf-analysis-tools"
+version = "0.1.0"
+description = ""
+authors = []
+readme = "README.md"
+package-mode = false
+
+
+
+# Packages
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+scraps = "^0.5.2"
+resonator-tools = {git = "https://github.com/sebastianprobst/resonator_tools.git"}
+
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
