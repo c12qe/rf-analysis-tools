@@ -3,3 +3,4 @@
 .coverage
 .vscode
 **/.ipynb_checkpoints
+.idea/
