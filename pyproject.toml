@@ -14,6 +14,7 @@ python = ">=3.10,<3.12"
 scraps = "^0.5.2"
 resonator-tools = {git = "https://github.com/sebastianprobst/resonator_tools.git"}
 qcodes = "0.50"
+pdata = "^0.1.0"
 
 
 
