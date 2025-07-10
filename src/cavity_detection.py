@@ -101,7 +101,11 @@ class Sij_data():
             f.write(f"database_path = '{self.db_path}'\n")
 
 
-class CavityAnalysisTool:
+class CavityIdentificationTool:
+
+    Pass
+
+class CavityFittingTool:
     def __init__(self, frequency_data: np.ndarray, amplitude_data: np.ndarray):
         """
         Initialize Cavity Analysis Tool with frequency and amplitude data
