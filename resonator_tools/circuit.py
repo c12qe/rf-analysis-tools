@@ -181,7 +181,7 @@ class reflection_port(circlefit, save_load, plotting, calibration):
 		import matplotlib.pyplot as plt
 		from matplotlib.widgets import Slider, Button
 		fig, ((ax2,ax0),(ax1,ax3)) = plt.subplots(nrows=2,ncols=2)
-		plt.suptitle('Normalized data. Use the silders to improve the fitting if necessary.')
+		plt.suptitle('Normalized data. ')
 		plt.subplots_adjust(left=0.25, bottom=0.25)
 		l0, = ax0.plot(self.f_data*1e-9,np.absolute(self.z_data))
 		l1, = ax1.plot(self.f_data*1e-9,np.angle(self.z_data))
@@ -451,7 +451,7 @@ class notch_port(circlefit, save_load, plotting, calibration):
 		import matplotlib.pyplot as plt
 		from matplotlib.widgets import Slider, Button
 		fig, ((ax2,ax0),(ax1,ax3)) = plt.subplots(nrows=2,ncols=2)
-		plt.suptitle('Normalized data. Use the silders to improve the fitting if necessary.')
+		plt.suptitle('Normalized data. ')
 		plt.subplots_adjust(left=0.25, bottom=0.25)
 		l0, = ax0.plot(self.f_data*1e-9,np.absolute(self.z_data))
 		l1, = ax1.plot(self.f_data*1e-9,np.angle(self.z_data))
