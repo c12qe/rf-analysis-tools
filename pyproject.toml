@@ -22,7 +22,7 @@ numpy = "^1.23.3"
 serial = "^0.0.97"
 pyserial = "^3.5"
 matplotlib = "3.10"
-
+holoviews = "^1.15.4"  # Plotting tools
 
 
 [tool.poetry.group.dev.dependencies]
