@@ -1,6 +1,6 @@
 import os
 
-os.chdir("D:\\Github\\rf-analysis-tools\\resonator_tools")
+os.chdir("/rf-analysis-tools/src/resonator_tools")
 
 from resonator_tools import circuit
 
