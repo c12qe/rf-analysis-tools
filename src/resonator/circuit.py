@@ -382,7 +382,7 @@ class notch_port(circlefit, save_load, plotting, calibration):
 		Qi_dia_corr = 1./(1./Ql-1./Qc)
 		Qi_no_corr = 1./(1./Ql-1./absQc)
 	
-		results = {"Qi_dia_corr":Qi_dia_corr,"Qi_no_corr":Qi_no_corr,"absQc":absQc,"Qc_dia_corr":Qc,"Ql":Ql,"fr":fr,"theta0":theta0,"phi0":phi0}
+		results = {"fr":fr,"Qi_dia_corr":Qi_dia_corr,"Qi_no_corr":Qi_no_corr,"absQc":absQc,"Qc_dia_corr":Qc,"Ql":Ql,"theta0":theta0,"phi0":phi0}
 	
 		#calculation of the error
 		p = [fr,absQc,Ql,phi0]
