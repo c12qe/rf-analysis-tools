@@ -1,6 +1,9 @@
 import warnings
+from typing import Any
+
 import numpy as np
 import scipy.optimize as spopt
+from numpy import ndarray, dtype, float64, complex128, floating, complexfloating, inexact, number, timedelta64
 from scipy.constants import hbar
 from scipy.interpolate import splrep, splev
 
@@ -349,7 +352,8 @@ class notch_port(circlefit, save_load, plotting, calibration):
 		'''
 		return (z_data-A2*(f_data-frcal))/amp_norm*np.exp(1j*(-alpha+2.*np.pi*delay*f_data))
 
-	def circlefit(self,f_data,z_data,fr=None,Ql=None,refine_results=False,calc_errors=True):
+	def circlefit(self, f_data: object, z_data: object, fr: object = None, Ql: object = None, refine_results: object = False,
+				  calc_errors: object = True) -> dict[str, float | ndarray[tuple[int, ...], dtype[float64]] | ndarray[tuple[int, ...], dtype[complex128]] | ndarray[tuple[int, ...], dtype[floating]] | ndarray[tuple[int, ...], dtype[complexfloating]] | ndarray[tuple[int, ...], dtype[inexact]] | ndarray[tuple[int, ...], dtype[number]] | ndarray[tuple[int, ...], dtype[timedelta64]] | Any]:
 		'''
 		performs a circle fit on a frequency vs. complex resonator scattering data set
 		Data has to be normalized!!

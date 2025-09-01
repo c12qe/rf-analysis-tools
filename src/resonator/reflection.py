@@ -20,6 +20,7 @@ class AbstractReflection(base.ResonatorModel):
     io_coupling_coefficient = 1
 
 
+
 # Linear models and fitters
 
 class LinearReflection(AbstractReflection):
