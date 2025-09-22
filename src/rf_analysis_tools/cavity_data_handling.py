@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 from scipy.optimize import curve_fit
+import xarray as xr
 
 # import probst tool
 class Sij_data:
