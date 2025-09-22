@@ -1,10 +1,11 @@
 [tool.poetry]
 name = "rf-analysis-tools"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = []
 readme = "README.md"
-package-mode = false
+package-mode = true
+packages = [{ include = "rf_analysis_tools", from = "src" },{ include = "resonator", from = "src" }]
 
 
 
@@ -12,15 +13,20 @@ package-mode = false
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
 scraps = "^0.5.2"
-resonator-tools = {git = "https://github.com/sebastianprobst/resonator_tools.git"}
 qcodes = "0.50"
 pdata = "^0.1.0"
-
-
+ipython = "^8.29.0"
+jupyter = "^1.1.1"
+deprecated = "^1.2.14"
+numpy = "^1.23.3"
+serial = "^0.0.97"
+pyserial = "^3.5"
+matplotlib = "3.10"
+holoviews = "^1.15.4"  # Plotting tools
 
 
 [tool.poetry.group.dev.dependencies]
-jupyterlab = "3.5.2"
+jupyterlab = "4.2.5"
 
 [build-system]
 requires = ["poetry-core"]
