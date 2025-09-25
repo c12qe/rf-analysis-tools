@@ -170,6 +170,25 @@ class reflection_port(circlefit, save_load, plotting, calibration):
 		self.z_data_sim = A2*(self.f_data-frcal)+self._S11_directrefl(self.f_data,fr=self.fitresults["fr"],Ql=self.fitresults["Ql"],Qc=self.fitresults["Qc"],a=amp_norm,alpha=alpha,delay=delay)
 		self.z_data_sim_norm = self._S11_directrefl(self.f_data,fr=self.fitresults["fr"],Ql=self.fitresults["Ql"],Qc=self.fitresults["Qc"],a=1.,alpha=0.,delay=0.)		
 		self._delay = delay
+
+	def autofit_with_calibration(self,edelay_range = [-1,1],delay_points:int=20):
+		'''
+		automatic fit with possible user interaction to crop the data and modify the electric delay
+		f1,f2,delay are determined in the GUI. Then, data is cropped and autofit with delay is performed
+		'''
+		#first fit
+
+		fmin, fmax = self.f_data.min(), self.f_data.max()
+		self.autofit()
+		self.__delay = self._delay
+
+		# Next iterations
+		sscale = 10.
+		new_edelay_array = self.__delay*sscale*np.linspace(edelay_range[0],edelay_range[1],delay_points)
+
+		#Start fitting
+		for edelay in new_edelay_array:
+			self.autofit(electric_delay=edelay)
 		
 	def GUIfit(self):
 		'''

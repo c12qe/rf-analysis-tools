@@ -6,4 +6,3 @@ from resonator_tools.utilities import Watt2dBm, dBm2Watt
 from scipy.constants import hbar
 import warnings
 
-# TO DO: Add the function wrapping the autofit and do_normalization equivalent as GUIfit()
