@@ -23,6 +23,7 @@ serial = "^0.0.97"
 pyserial = "^3.5"
 matplotlib = "3.10"
 holoviews = "^1.15.4"  # Plotting tools
+pdfpages = "^0.1.0"
 
 
 [tool.poetry.group.dev.dependencies]

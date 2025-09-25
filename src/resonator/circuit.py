@@ -4,6 +4,7 @@ from typing import Any
 import numpy as np
 import scipy.optimize as spopt
 from numpy import ndarray, dtype, float64, complex128, floating, complexfloating, inexact, number, timedelta64
+from pandas.compat.numpy.function import validate_min, validate_max
 from scipy.constants import hbar
 from scipy.interpolate import splrep, splev
 
@@ -207,10 +208,10 @@ class reflection_port(circlefit, save_load, plotting, calibration):
 		axf2 = plt.axes([0.25, 0.1, 0.65, 0.03], axisbg=axcolor)
 		axf1 = plt.axes([0.25, 0.15, 0.65, 0.03], axisbg=axcolor)
 		sscale = 10.
-		sdelay = Slider(axdelay, 'delay', -1., 1., valinit=self.__delay/(sscale*self.__delay),valfmt='%f')
+		sdelay = Slider(ax = axdelay, label = 'delay', valmin = -1.,valmax= 1., valinit=self.__delay/(sscale*self.__delay),valfmt='%f')
 		df = (fmax-fmin)*0.05
-		sf2 = Slider(axf2, 'f2', (fmin-df)*1e-9, (fmax+df)*1e-9, valinit=fmax*1e-9,valfmt='%.10f GHz')
-		sf1 = Slider(axf1, 'f1', (fmin-df)*1e-9, (fmax+df)*1e-9, valinit=fmin*1e-9,valfmt='%.10f GHz')
+		sf2 = Slider(ax =axf2, label= 'f2', valmin = (fmin-df)*1e-9, valmax = (fmax+df)*1e-9, valinit=fmax*1e-9,valfmt='%.10f GHz')
+		sf1 = Slider(ax = axf1, label = 'f1',valmin = (fmin-df)*1e-9, valmax = (fmax+df)*1e-9, valinit=fmin*1e-9,valfmt='%.10f GHz')
 		def update(val):
 			self.autofit(electric_delay=sdelay.val*sscale*self.__delay,fcrop=(sf1.val*1e9,sf2.val*1e9))
 			l0.set_data(self.f_data*1e-9,np.absolute(self.z_data))
