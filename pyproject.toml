@@ -26,7 +26,7 @@ holoviews = "^1.15.4"  # Plotting tools
 
 
 [tool.poetry.group.dev.dependencies]
-jupyterlab = "4.2.5"
+jupyterlab = "4.4.8"
 
 [build-system]
 requires = ["poetry-core"]
